@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스탬프 투어</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mark.css">
     <script src="dropdown.js"></script>
 </head>
 <body>
     <div id="header">
         <h1 class="nav-title">경상북도 관광지 주소</h1>
     </div>
-    <div id="nav">
-        <div class="nav-container">
+    <div id="category">
+        <div class="category-container">
             <!-- 드랍다운 리스트 -->
-            <div class="left-nav">
+            <div class="left-category">
                 <!-- province 드립다운 -->
                 <div class="dropdown province_dropdown">
                     <button class="dropbtn"> 
@@ -25,6 +24,10 @@
                             style="font-family: Material Icons; font-size : 16px; color : #3b3b3b; float:right;"
                             onclick="dropdown('province')">arrow_drop_down</span>
                     </button>
+                    <div class="dropdown-content">
+                        <div class="province" onclick="showMenu(this.innerText, 'province')">경상북도</div>
+                    </div>
+                    <!--
                     <div class="dropdown-content">
                         <div class="province" onclick="showMenu(this.innerText, 'province')">경상북도</div>
                         <div class="province" onclick="showMenu(this.innerText, 'province')">서울</div>
@@ -36,6 +39,7 @@
                         <div class="province" onclick="showMenu(this.innerText, 'province')">경상남도</div>
                         <div class="province" onclick="showMenu(this.innerText, 'province')">제주도</div>
                     </div>
+                    -->
                 </div>
 
                 <!-- city 드립다운 -->
@@ -47,18 +51,26 @@
                             onclick="dropdown('city')">arrow_drop_down</span>
                     </button>
                     <div class="dropdown-content">
-                        <div class="city" onclick="showMenu(this.innerText, 'city')">안동시</div>
+                        <div class="city" onclick="showMenu(this.innerText, 'city')">경산시</div>
+                        <div class="city" onclick="showMenu(this.innerText, 'city')">경주시</div>
                         <div class="city" onclick="showMenu(this.innerText, 'city')">구미시</div>
+                        <div class="city" onclick="showMenu(this.innerText, 'city')">김천시</div>
+                        <div class="city" onclick="showMenu(this.innerText, 'city')">문경시</div>
+                        <div class="city" onclick="showMenu(this.innerText, 'city')">상주시</div>
+                        <div class="city" onclick="showMenu(this.innerText, 'city')">안동시</div>
+                        <div class="city" onclick="showMenu(this.innerText, 'city')">영주시</div>
+                        <div class="city" onclick="showMenu(this.innerText, 'city')">영천시</div>
                         <div class="city" onclick="showMenu(this.innerText, 'city')">포항시</div>
                     </div>
                 </div>
-                <button class="dropbtn_click" onclick="categoryHandler()">확인</button>
+                <button class="ok_click" onclick="categoryHandler()">확인</button>
             </div>
 
-            <!-- 마이 페이지 -->
+            <!-- 마이 페이지 
             <div class="right-nav">
                 <button>My Page</button>
             </div>
+            -->
         </div>
     </div>
 

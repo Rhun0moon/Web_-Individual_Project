@@ -1,7 +1,7 @@
 var mapContainer = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 var mapOptions = { // 지도를 생성할 때 필요한 기본 옵션
-    center: new kakao.maps.LatLng(36.5683387, 128.7291769), // 지도의 중심좌표
-    level: 5 // 지도의 레벨(확대, 축소 정도)
+    center: new kakao.maps.LatLng(36.5683272, 128.7296112), // 지도의 중심좌표 - 전국 36.480167, 127.8623244(level: 12)
+    level: 10 // 지도의 레벨(확대, 축소 정도)
 }
 var map = new kakao.maps.Map(mapContainer, mapOptions); //지도 생성 및 객체 리턴
 
@@ -16,25 +16,56 @@ map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 var zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
+// 각지 시청 위치 (도, 시, 위도, 경도)
+const cityDataSet = [
+    {
+        province: "경상북도", city: "경산시",
+        latitude: "35.8337972", longitude: "128.8090748"
+    },
+    {
+        province: "경상북도", city: "경주시",
+        latitude: "35.8563061", longitude: "129.2250935"
+    },
+    {
+        province: "경상북도", city: "구미시",
+        latitude: "36.1198554", longitude: "128.3442447"
+    },
+    {
+        province: "경상북도", city: "김천시",
+        latitude: "36.139867", longitude: "128.1136501"
+    },
+    {
+        province: "경상북도", city: "문경시",
+        latitude: "36.5868172", longitude: "128.1870909"
+    },
+    {
+        province: "경상북도", city: "상주시",
+        latitude: "36.4109729", longitude: "128.1589371"
+    },
+    {
+        province: "경상북도", city: "안동시",
+        latitude: "36.5683272", longitude: "128.7296112"
+    },
+    {
+        province: "경상북도", city: "영주시",
+        latitude: "36.805692", longitude: "128.62396"
+    },
+    {
+        province: "경상북도", city: "영천시",
+        latitude: "36.0156997", longitude: "128.9427024"
+    },
+    {
+        province: "경상북도", city: "포항시",
+        latitude: "36.0191816", longitude: "129.3432983"
+    }
+];
+
 // 데이터 준비하기(제목, 주소, 이미지, 도, 시)
 const dataSet = [
+    // 안동시
     {
         title: "월영교",
-        address: "경상북도 안동시 상아동 569",
-        img: "./img/img1.jpg",
-        province: "경상북도", 
-        city: "안동시"
-    },
-    {
-        title: "도산서원",
-        address: "경상북도 안동시 도산면 도산서원길 154",
-        img: "./img/img1.jpg",
-        province: "경상북도", 
-        city: "안동시"
-    },
-    {
-        title: "병산서원",
-        address: "경북 안동시 풍천면 병산길 386",
+        address: "경북 안동시 상아동 569",
         img: "./img/img1.jpg",
         province: "경상북도", 
         city: "안동시"
@@ -54,15 +85,8 @@ const dataSet = [
         city: "안동시"
     },
     {
-        title: "만휴정",
-        address: "경북 안동시 길안면 묵계하리길 42",
-        img: "./img/img1.jpg",
-        province: "경상북도", 
-        city: "안동시"
-    },
-    {
-        title: "안동하회마을",
-        address: "경북 안동시 풍천면 하회리 1176-1",
+        title: "안동대학교",
+        address: "경북 안동시 송천동 경동로 1375",
         img: "./img/img1.jpg",
         province: "경상북도", 
         city: "안동시"
@@ -74,6 +98,127 @@ const dataSet = [
         province: "경상북도", 
         city: "안동시"
     },
+    // 경산시
+    {
+        title: "하양유원지",
+        address: "경상북도 경산시 하양읍 부호리 592-1",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "경산시"
+    },
+    {
+        title: "불국사",
+        address: "경상북도 경산시 와촌면 강학리 5",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "경산시"
+    },
+    // 경주시
+    {
+        title: "경주보문관광단지",
+        address: "경상북도 경주시 보문로 446",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "경주시"
+    },
+    {
+        title: "경주교촌마을",
+        address: "경상북도 경주시 교동 교촌길 39-2",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "경주시"
+    },
+    // 구미시
+    {
+        title: "구미에코랜드",
+        address: "경상북도 구미시 산동면 인덕1길 195",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "구미시"
+    },
+    {
+        title: "약사암",
+        address: "경상북도 구미시 남통동 산33-1",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "구미시"
+    },
+    // 김천시
+    {
+        title: "직지문화공원",
+        address: "경상북도 김천시 대항면 운수리 33-1",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "김천시"
+    },
+    {
+        title: "김천녹색미래과학관",
+        address: "경상북도 김천시 혁신6로 31",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "김천시"
+    },
+    // 문경시
+    {
+        title: "문경새재 도립공원",
+        address: "경상북도 문경시 문경읍 새재로 932 KR",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "문경시"
+    },
+    {
+        title: "불정자연휴양림",
+        address: "경상북도 문경시 불정길 180",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "문경시"
+    },
+    // 상주시
+    {
+        title: "경천대",
+        address: "경상북도 상주시 사벌면 삼덕리 산15-26",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "상주시"
+    },
+    {
+        title: "상주박물관",
+        address: "경상북도 상주시 사벌면 경천로 684",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "상주시"
+    },
+    // 영주시
+    {
+        title: "선비촌",
+        address: "경상북도 영주시 순흥면 청구리 357",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "영주시"
+    },
+    {
+        title: "콩세계과학관",
+        address: "경상북도 영주시 부석면 영부로 23",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "영주시"
+    },
+    // 영천시
+    {
+        title: "공산폭포",
+        address: "경상북도 영천시 신녕면 치산리",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "영천시"
+    },
+    {
+        title: "시안미술관",
+        address: "경상북도 영천시 화산면 가래실로 364",
+        img: "./img/img1.jpg",
+        province: "경상북도", 
+        city: "영천시"
+    },
+    // 포항시
     {
         title: "영일대해수욕장",
         address: "경북 포항시 북구 두호동 685-1",
@@ -94,7 +239,7 @@ const dataSet = [
 var geocoder = new kakao.maps.services.Geocoder();
 
 // 마커 이미지
-var imageSrc = './img/mark_ver3_3_64.png', // 마커이미지의 주소입니다    
+var imageSrc = './img/mark_ver3_2_64.png', // 마커이미지의 주소입니다    
     imageSize = new kakao.maps.Size(34, 36), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(17, 36)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정
 
@@ -201,6 +346,14 @@ function makeOutListener(infowindow){
 function categoryHandler(){
     const province = document.querySelector(".province_dropdown .dropbtn_content");
     const city = document.querySelector(".city_dropdown .dropbtn_content");
+
+    for(let data of cityDataSet){
+        if(data.province === province.innerHTML && data.city === city.innerHTML){
+            var moveLatLon = new kakao.maps.LatLng(data.latitude, data.longitude);
+            map.setCenter(moveLatLon);
+            map.setLevel(8);
+        }
+    }
 
     // 데이터 분류
     let categorizedDataSet = [];
