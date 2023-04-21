@@ -22,12 +22,52 @@ button{
     padding: 2px 5px;
 }
 
+/* 관광 리스트 */
+.top-list{
+    color: #fff;
+    width: 100%; height: 55px;
+    padding-left: 10px;
+    line-height: 55px;
+    display: flex;
+    align-items: center;
+    background : #333;
+    text-decoration: none;
+}
+.bottom-list{
+    width: 25%; height: calc(100vh - 55px);
+}
+.tour_list {
+    list-style-type: none;
+    padding: 0px; margin: 0px;
+    width: 25%; height: calc(100vh - 55px);
+    background: #fff;
+    overflow: scroll;
+    position: fixed;
+}
+.tour_list>div{
+    padding: 10px;
+    color: #000;
+    font-weight: bold;
+    cursor : pointer;
+}
+.tour_list>div:nth-child(odd):hover { background: rgb(247,150,192); } /* background: #333; */
+.tour_list>div:nth-child(even):hover { background: rgb(118,174,241); }
+.tour_list img{ width: 49%; margin-top: 5px;}
+.tour_list::-webkit-scrollbar{
+    width : 5px;
+}
+.tour_list::-webkit-scrollbar-thumb{
+    border-radius : 2px;
+    background-color :rgb(194, 194, 194)
+}
+
+
 /* 헤더 */
 body { height: 100vh; }
 div#header{
-    height: 60px;
+    height: 55px;
     font-size: 10px;
-    line-height: 60px;
+    line-height: 55px;
     text-align: center;
     background: rgb(247,150,192);
     background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
@@ -112,7 +152,8 @@ div#category{
 /* main - 지도 부분 */
 #main {
     /* padding-top: 1.5rem; */
-    height: calc(100% - 90px);
+    height: calc(100% - 100px);
+    width: calc(100% - 25%);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -129,19 +170,14 @@ div#category{
     border: 1px solid #000;
     border-radius: 5px;
     background-color: white;
-}
-  
+} 
 .infowindow-img-containner {
     width: 100%;
     overflow: hidden;
 }
-  
 .infowindow-img { width: 100%; }
-
 .infowindow-title { font-size: 1.5rem; }
-
 .infowindow-address { font-size: 1rem; }
-
 .infowindow-btn {
     font-size: 1rem;
     text-decoration: none;

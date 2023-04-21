@@ -10,7 +10,7 @@ var mapTypeControl = new kakao.maps.MapTypeControl();
 
 // 지도에 컨트롤을 추가해야 지도위에 표시
 // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미
-map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPLEFT); // 원래 TOPRIGHT
 
 // 지도 확대 축소를 제어할 수 있는 줌 컨트롤 생성
 var zoomControl = new kakao.maps.ZoomControl();
@@ -66,35 +66,35 @@ const dataSet = [
     {
         title: "월영교",
         address: "경북 안동시 상아동 569",
-        img: "./img/img1.jpg",
+        img1: "./img/img1-1.jpg", img2: "./img/img1-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
     {
         title: "임청각",
         address: "경북 안동시 임청각길 63",
-        img: "./img/img1.jpg",
+        img1: "./img/img2-1.jpg", img2: "./img/img2-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
     {
         title: "안동찜닭골목",
         address: "경북 안동시 서부동 185",
-        img: "./img/img1.jpg",
+        img1: "./img/img3-1.jpg", img2: "./img/img3-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
     {
         title: "안동대학교",
         address: "경북 안동시 송천동 경동로 1375",
-        img: "./img/img1.jpg",
+        img1: "./img/img4-1.jpg", img2: "./img/img4-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
     {
         title: "안동국제탈춤 페스티벌",
         address: "경북 안동시 육사로 239",
-        img: "./img/img1.jpg",
+        img1: "./img/img5-1.jpg", img2: "./img/img5-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
@@ -102,14 +102,14 @@ const dataSet = [
     {
         title: "하양유원지",
         address: "경상북도 경산시 하양읍 부호리 592-1",
-        img: "./img/img1.jpg",
+        img1: "./img/img6-1.jpg", img2: "./img/img6-2.jpg",
         province: "경상북도", 
         city: "경산시"
     },
     {
         title: "불국사",
         address: "경상북도 경산시 와촌면 강학리 5",
-        img: "./img/img1.jpg",
+        img1: "./img/img7-1.jpg", img2: "./img/img7-2.jpg",
         province: "경상북도", 
         city: "경산시"
     },
@@ -117,14 +117,14 @@ const dataSet = [
     {
         title: "경주보문관광단지",
         address: "경상북도 경주시 보문로 446",
-        img: "./img/img1.jpg",
+        img1: "./img/img8-1.jpg", img2: "./img/img8-2.jpg",
         province: "경상북도", 
         city: "경주시"
     },
     {
         title: "경주교촌마을",
         address: "경상북도 경주시 교동 교촌길 39-2",
-        img: "./img/img1.jpg",
+        img1: "./img/img9-1.jpg", img2: "./img/img9-2.jpg",
         province: "경상북도", 
         city: "경주시"
     },
@@ -132,14 +132,14 @@ const dataSet = [
     {
         title: "구미에코랜드",
         address: "경상북도 구미시 산동면 인덕1길 195",
-        img: "./img/img1.jpg",
+        img1: "./img/img10-1.jpg", img2: "./img/img10-2.jpg",
         province: "경상북도", 
         city: "구미시"
     },
     {
         title: "약사암",
         address: "경상북도 구미시 남통동 산33-1",
-        img: "./img/img1.jpg",
+        img1: "./img/img11-1.jpg", img2: "./img/img11-2.jpg",
         province: "경상북도", 
         city: "구미시"
     },
@@ -147,14 +147,14 @@ const dataSet = [
     {
         title: "직지문화공원",
         address: "경상북도 김천시 대항면 운수리 33-1",
-        img: "./img/img1.jpg",
+        img1: "./img/img12-1.jpg", img2: "./img/img12-2.jpg",
         province: "경상북도", 
         city: "김천시"
     },
     {
         title: "김천녹색미래과학관",
         address: "경상북도 김천시 혁신6로 31",
-        img: "./img/img1.jpg",
+        img1: "./img/img13-1.jpg", img2: "./img/img13-2.jpg",
         province: "경상북도", 
         city: "김천시"
     },
@@ -162,14 +162,14 @@ const dataSet = [
     {
         title: "문경새재 도립공원",
         address: "경상북도 문경시 문경읍 새재로 932 KR",
-        img: "./img/img1.jpg",
+        img1: "./img/img14-1.jpg", img2: "./img/img14-2.jpg",
         province: "경상북도", 
         city: "문경시"
     },
     {
         title: "불정자연휴양림",
         address: "경상북도 문경시 불정길 180",
-        img: "./img/img1.jpg",
+        img1: "./img/img15-1.jpg", img2: "./img/img15-2.jpg",
         province: "경상북도", 
         city: "문경시"
     },
@@ -177,14 +177,14 @@ const dataSet = [
     {
         title: "경천대",
         address: "경상북도 상주시 사벌면 삼덕리 산15-26",
-        img: "./img/img1.jpg",
+        img1: "./img/img16-1.jpg", img2: "./img/img16-2.jpg",
         province: "경상북도", 
         city: "상주시"
     },
     {
         title: "상주박물관",
         address: "경상북도 상주시 사벌면 경천로 684",
-        img: "./img/img1.jpg",
+        img1: "./img/img17-1.jpg", img2: "./img/img17-2.jpg",
         province: "경상북도", 
         city: "상주시"
     },
@@ -192,14 +192,14 @@ const dataSet = [
     {
         title: "선비촌",
         address: "경상북도 영주시 순흥면 청구리 357",
-        img: "./img/img1.jpg",
+        img1: "./img/img18-1.jpg", img2: "./img/img18-2.jpg",
         province: "경상북도", 
         city: "영주시"
     },
     {
         title: "콩세계과학관",
         address: "경상북도 영주시 부석면 영부로 23",
-        img: "./img/img1.jpg",
+        img1: "./img/img19-1.jpg", img2: "./img/img19-2.jpg",
         province: "경상북도", 
         city: "영주시"
     },
@@ -207,14 +207,14 @@ const dataSet = [
     {
         title: "공산폭포",
         address: "경상북도 영천시 신녕면 치산리",
-        img: "./img/img1.jpg",
+        img1: "./img/img20-1.jpg", img2: "./img/img20-2.jpg",
         province: "경상북도", 
         city: "영천시"
     },
     {
         title: "시안미술관",
         address: "경상북도 영천시 화산면 가래실로 364",
-        img: "./img/img1.jpg",
+        img1: "./img/img21-1.jpg", img2: "./img/img21-2.jpg",
         province: "경상북도", 
         city: "영천시"
     },
@@ -222,14 +222,14 @@ const dataSet = [
     {
         title: "영일대해수욕장",
         address: "경북 포항시 북구 두호동 685-1",
-        img: "./img/img1.jpg",
+        img1: "./img/img22-1.jpg", img2: "./img/img22-2.jpg",
         province: "경상북도", 
         city: "포항시"
     },
     {
         title: "호미곶해맞이광장",
         address: "경북 포항시 남구 호미곶면 해맞이로 136",
-        img: "./img/img1.jpg",
+        img1: "./img/img23-1.jpg", img2: "./img/img23-2.jpg",
         province: "경상북도", 
         city: "포항시"
     }
@@ -264,13 +264,12 @@ function getCoordsByAddress(address){
 
 // 인포윈도우  html
 function getCentent(data){
-    let imgSrc = data.img;
 
     // html 인포윈도우
     return `
     <div class="infowindow">
         <div class="infowindow-img-container">
-            <img src="${imgSrc}" class="infowindow-img" class="infowindow-img" alt="">
+            <img src="${data.img2}" class="infowindow-img" class="infowindow-img" alt="">
         </div>
         <div class="infowindow-body">
             <h3 class="infowindow-title">${data.title}</h3>
@@ -279,26 +278,49 @@ function getCentent(data){
     </div>
     `;
 }
+function getTourList(data, i){
+    const tour_list = document.getElementById("tour_list");
+    const newList = document.createElement('div');
+    newList.innerHTML = `
+        <div class="list${i}">
+            <h3 class="list-title">${data.title}</h3>
+            <p class="list-address">${data.address}</p>
+            <img src="${data.img1}" alt="${data.title}" class="list-img">
+            <img src="${data.img2}" alt="${data.title}" class="list-img">
+        <div>
+    `;
+    tour_list.appendChild(newList);
+}
 
 async function setMap(dataSet) {
     for (var i = 0; i < dataSet.length; i++) {
-        // 마커를 생성합니다
+        // 마커 생성
         let coords = await getCoordsByAddress(dataSet[i].address);
         var marker = new kakao.maps.Marker({
             map: map,          // 마커를 표시할 지도
             position: coords,  // 마커를 표시할 위치
             image: markerImage // 마커 이미지 설정
         });
-
         markerArray.push(marker);
       
-        // 마커에 표시할 인포윈도우를 생성합니다 
+        // 마커에 표시할 인포윈도우 생성
         var infowindow = new kakao.maps.InfoWindow({
             content: getCentent(dataSet[i]), // 인포윈도우에 표시할 내용
         });
+        infowindowArray.push(infowindow); //인포윈도우 배열이 생성될때마다 인포윈도우 개체 추가
 
-        //인포윈도우 배열이 생성될때마다 인포윈도우 개체 추가
-        infowindowArray.push(infowindow);
+        // 관광 리스트 생성
+        getTourList(dataSet[i], i);
+
+        // 관광지 리스트
+        let click = document.querySelector(`.list${i}`);
+        click.addEventListener("click", function(){
+            closeInfowindow();
+            infowindow.open(map, marker);
+            map.panTo(coords); // 클릭한 곳으로 지도 중심 옮김
+            console.log(marker);
+            console.log(infowindow);
+        });
 
         // 마커에 mouseover 이벤트와 moustout 이벤트 등록
         // 이벤트 리스너로는 클로저를 만들어서 등록
@@ -308,11 +330,13 @@ async function setMap(dataSet) {
             "click",
             makeOverListener(map, marker, infowindow, coords)
         );
+
         kakao.maps.event.addListener(
             map, 
             "click",
             makeOutListener(infowindow)
         );
+
     }
 }
 
@@ -342,11 +366,19 @@ function makeOutListener(infowindow){
     };
 }
 
+function closeList(){
+    const div = document.getElementById('tour_list');
+    while (div.children.length > 0) {
+        div.removeChild(div.firstChild);
+    }
+}
+
 // 카테고리 분류
 function categoryHandler(){
     const province = document.querySelector(".province_dropdown .dropbtn_content");
     const city = document.querySelector(".city_dropdown .dropbtn_content");
 
+    // 지도 이동
     for(let data of cityDataSet){
         if(data.province === province.innerHTML && data.city === city.innerHTML){
             var moveLatLon = new kakao.maps.LatLng(data.latitude, data.longitude);
@@ -363,13 +395,11 @@ function categoryHandler(){
         }
     }
 
-    // 기본 마커 삭제
-    closeMarker();
+    closeMarker(); // 기본 마커 삭제
+    closeInfowindow(); // 기본 인포윈도우 닫기
+    closeList();   // 기본 리스트 삭제
 
-    // 기본 인포윈도우 닫기
-    closeInfowindow();
-    // 실행
-    setMap(categorizedDataSet);
+    setMap(categorizedDataSet); // 실행 - 마커, 인포윈도우, 관광 리스트
 }
 
 let markerArray = [];

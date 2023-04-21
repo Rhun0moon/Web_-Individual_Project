@@ -9,42 +9,15 @@
     <script src="dropdown.js"></script>
 </head>
 <body>
-    <div style="float: left; width: 25%; height: 100%;">
-        <div class="top-list">
-            <span style="font-family: Material Icons; font-size: 30px; color: #fff;">account_circle</span>
-            <p class="user" style="margin-left: 10px;"> 사용자</p>
-        </div>
-        <!-- 생길거야 관광지가 여기에 -->
-        <div class="bottom-list">
-            <div class="tour_list" id="tour_list">
-                <div>
-                    <h3 class="title">안동대학교</h3>
-                    <p class="address">경북 안동시 송천동 경동로 1375</p>
-                    <img src="./img/img4-1.jpg" alt="안동대학교">
-                    <img src="./img/img4-2.jpg" alt="안동대학교">
-                </div>
-                <div>
-                    <h3 class="title">경주교촌마을</h3>
-                    <p class="address">경상북도 경주시 교동 교촌길 39-2</p>
-                    <img src="./img/img9-1.jpg" alt="경주교촌마을">
-                    <img src="./img/img9-2.jpg" alt="경주교촌마을">
-                </div>
-                <div>
-                    <h3 class="title">영일대해수욕장</h3>
-                    <p class="address">경북 포항시 북구 두호동 685-1</p>
-                    <img src="./img/img23-1.jpg" alt="영일대해수욕장">
-                    <img src="./img/img23-2.jpg" alt="영일대해수욕장">
-                </div>
-            </div>
-        </div>
+    <div style="float: left; width: 30%; height: 100%;">
+        <p>hello</p>
     </div>
     <div>
-        <div id="header" style="float: left; width: 75%;">
-            <span style="font-family: Material Icons; font-size : 30px; color : #3b3b3b; float:left; margin-left: 5px;">menu_open</span>
+        <div id="header" style="float: left; width: 70%;">
             <h1 class="nav-title">경상북도 관광지 주소</h1>
         </div>
         
-        <div id="category" style="float: left; width: 75%;">
+        <div id="category" style="float: left; width: 70%;">
             <div class="category-container">
                 <!-- 드랍다운 리스트 -->
                 <div class="left-category">
@@ -59,6 +32,19 @@
                         <div class="dropdown-content">
                             <div class="province" onclick="showMenu(this.innerText, 'province')">경상북도</div>
                         </div>
+                        <!--
+                        <div class="dropdown-content">
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">경상북도</div>
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">서울</div>
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">인천</div>
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">경기도</div>
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">강원도</div>
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">충청도</div>
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">전라도</div>
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">경상남도</div>
+                            <div class="province" onclick="showMenu(this.innerText, 'province')">제주도</div>
+                        </div>
+                        -->
                     </div>
 
                     <!-- city 드립다운 -->
@@ -86,6 +72,7 @@
                 </div>
             </div>
         </div>
+        <div> </div>
     </div>
     <div id="main">
         <!-- 카카오 지도 -->
@@ -95,6 +82,7 @@
 </body>
 
 <!-- 카카오 API 불러오기 -->
+<!--script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY 입력&libraries=services"></script-->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8dccfb29840038eba132c27ae39a2777&libraries=services"></script>
 <script src="script.js"></script>
 </html>
