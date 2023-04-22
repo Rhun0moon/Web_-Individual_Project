@@ -260,8 +260,6 @@ function getCoordsByAddress(address){
     });
 }
 
-// setMap(dataSet); // 웹 실행하면 바로 모든 마커 출력됨
-
 // 인포윈도우  html
 function getCentent(data){
 
@@ -269,7 +267,7 @@ function getCentent(data){
     return `
     <div class="infowindow">
         <div class="infowindow-img-container">
-            <img src="${data.img2}" class="infowindow-img" class="infowindow-img" alt="">
+            <img src="${data.img1}" class="infowindow-img" class="infowindow-img" alt="">
         </div>
         <div class="infowindow-body">
             <h3 class="infowindow-title">${data.title}</h3>
@@ -282,7 +280,7 @@ function getTourList(data, i){
     const tour_list = document.getElementById("tour_list");
     const newList = document.createElement('div');
     newList.innerHTML = `
-        <div class="list${i}">
+        <div class="list${i}" onclick={tourListMap('list${i}')}>
             <h3 class="list-title">${data.title}</h3>
             <p class="list-address">${data.address}</p>
             <img src="${data.img1}" alt="${data.title}" class="list-img">
@@ -290,6 +288,19 @@ function getTourList(data, i){
         <div>
     `;
     tour_list.appendChild(newList);
+}
+
+function tourListMap(str){
+    const address = document.querySelector(`.${str} .list-address`);
+
+    var regex = /[^0-9]/g;				 // 숫자가 아닌 문자열을 선택하는 정규식
+    var result = str.replace(regex, ""); // 원래 문자열에서 숫자가 아닌 모든 문자열을 빈 문자로 변경
+    var i = parseInt(result);
+    var coords = getCoordsByAddress(address.innerHTML);
+
+    closeInfowindow();
+    infowindowArray[i].open(map, markerArray[i]);
+    map.setCenter(address.innerHTML);
 }
 
 async function setMap(dataSet) {
@@ -311,16 +322,6 @@ async function setMap(dataSet) {
 
         // 관광 리스트 생성
         getTourList(dataSet[i], i);
-
-        // 관광지 리스트
-        let click = document.querySelector(`.list${i}`);
-        click.addEventListener("click", function(){
-            closeInfowindow();
-            infowindow.open(map, marker);
-            map.panTo(coords); // 클릭한 곳으로 지도 중심 옮김
-            console.log(marker);
-            console.log(infowindow);
-        });
 
         // 마커에 mouseover 이벤트와 moustout 이벤트 등록
         // 이벤트 리스너로는 클로저를 만들어서 등록
@@ -379,11 +380,21 @@ function categoryHandler(){
     const city = document.querySelector(".city_dropdown .dropbtn_content");
 
     // 지도 이동
+    /*
     for(let data of cityDataSet){
         if(data.province === province.innerHTML && data.city === city.innerHTML){
             var moveLatLon = new kakao.maps.LatLng(data.latitude, data.longitude);
             map.setCenter(moveLatLon);
             map.setLevel(8);
+        }
+    }
+     */
+
+    for(var i=0; i<dataSet.length; i++){
+        if(i==0){
+            var moveLatLon = getCoordsByAddress(dataSet[i].address);
+            map.setLevel(8);
+            map.setCenter(moveLatLon);
         }
     }
 
