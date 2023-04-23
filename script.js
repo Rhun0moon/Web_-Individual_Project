@@ -60,40 +60,45 @@ const cityDataSet = [
     }
 ];
 
-// 데이터 준비하기(제목, 주소, 이미지, 도, 시)
+// 데이터 준비하기(제목, 주소, 위도, 경도, 이미지, 도, 시)
 const dataSet = [
     // 안동시
     {
         title: "월영교",
         address: "경북 안동시 상아동 569",
+        latitude:"36.5770183", longitude:"128.7603195",
         img1: "./img/img1-1.jpg", img2: "./img/img1-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
     {
         title: "임청각",
-        address: "경북 안동시 임청각길 63",
+        address: "경상북도 안동시 임청각길 63",
+        latitude:"36.565063", longitude:"128.7446716",
         img1: "./img/img2-1.jpg", img2: "./img/img2-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
     {
         title: "안동찜닭골목",
-        address: "경북 안동시 서부동 185",
+        address: "경상북도 안동시 서부동 185",
+        latitude:"36.5658373", longitude:"128.7289235",
         img1: "./img/img3-1.jpg", img2: "./img/img3-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
     {
         title: "안동대학교",
-        address: "경북 안동시 송천동 경동로 1375",
+        address: "경상북도 안동시 송천동 경동로 1375",
+        latitude:"36.5475154", longitude:"128.7980881",
         img1: "./img/img4-1.jpg", img2: "./img/img4-2.jpg",
         province: "경상북도", 
         city: "안동시"
     },
     {
         title: "안동국제탈춤 페스티벌",
-        address: "경북 안동시 육사로 239",
+        address: "경상북도 안동시 육사로 239",
+        latitude:"36.5603068", longitude:"128.7317599",
         img1: "./img/img5-1.jpg", img2: "./img/img5-2.jpg",
         province: "경상북도", 
         city: "안동시"
@@ -102,6 +107,7 @@ const dataSet = [
     {
         title: "하양유원지",
         address: "경상북도 경산시 하양읍 부호리 592-1",
+        latitude:"35.8991506", longitude:"128.804024",
         img1: "./img/img6-1.jpg", img2: "./img/img6-2.jpg",
         province: "경상북도", 
         city: "경산시"
@@ -109,6 +115,7 @@ const dataSet = [
     {
         title: "불국사",
         address: "경상북도 경산시 와촌면 강학리 5",
+        latitude:"35.9450551", longitude:"128.7789588",
         img1: "./img/img7-1.jpg", img2: "./img/img7-2.jpg",
         province: "경상북도", 
         city: "경산시"
@@ -117,6 +124,7 @@ const dataSet = [
     {
         title: "경주보문관광단지",
         address: "경상북도 경주시 보문로 446",
+        latitude:"35.843776", longitude:"129.2870864",
         img1: "./img/img8-1.jpg", img2: "./img/img8-2.jpg",
         province: "경상북도", 
         city: "경주시"
@@ -124,6 +132,7 @@ const dataSet = [
     {
         title: "경주교촌마을",
         address: "경상북도 경주시 교동 교촌길 39-2",
+        latitude:"35.8295417", longitude:"129.2147881",
         img1: "./img/img9-1.jpg", img2: "./img/img9-2.jpg",
         province: "경상북도", 
         city: "경주시"
@@ -132,6 +141,7 @@ const dataSet = [
     {
         title: "구미에코랜드",
         address: "경상북도 구미시 산동면 인덕1길 195",
+        latitude:"36.1773696", longitude:"128.4635141",
         img1: "./img/img10-1.jpg", img2: "./img/img10-2.jpg",
         province: "경상북도", 
         city: "구미시"
@@ -139,6 +149,7 @@ const dataSet = [
     {
         title: "약사암",
         address: "경상북도 구미시 남통동 산33-1",
+        latitude:"36.0924378", longitude:"128.3008795",
         img1: "./img/img11-1.jpg", img2: "./img/img11-2.jpg",
         province: "경상북도", 
         city: "구미시"
@@ -147,6 +158,7 @@ const dataSet = [
     {
         title: "직지문화공원",
         address: "경상북도 김천시 대항면 운수리 33-1",
+        latitude:"36.11551", longitude:"128.0137765",
         img1: "./img/img12-1.jpg", img2: "./img/img12-2.jpg",
         province: "경상북도", 
         city: "김천시"
@@ -154,6 +166,7 @@ const dataSet = [
     {
         title: "김천녹색미래과학관",
         address: "경상북도 김천시 혁신6로 31",
+        latitude:"36.1260558", longitude:"128.18458",
         img1: "./img/img13-1.jpg", img2: "./img/img13-2.jpg",
         province: "경상북도", 
         city: "김천시"
@@ -162,6 +175,7 @@ const dataSet = [
     {
         title: "문경새재 도립공원",
         address: "경상북도 문경시 문경읍 새재로 932 KR",
+        latitude:"36.7615936", longitude:"128.0769795",
         img1: "./img/img14-1.jpg", img2: "./img/img14-2.jpg",
         province: "경상북도", 
         city: "문경시"
@@ -169,6 +183,7 @@ const dataSet = [
     {
         title: "불정자연휴양림",
         address: "경상북도 문경시 불정길 180",
+        latitude:"36.6219688", longitude:"128.1359548",
         img1: "./img/img15-1.jpg", img2: "./img/img15-2.jpg",
         province: "경상북도", 
         city: "문경시"
@@ -177,6 +192,7 @@ const dataSet = [
     {
         title: "경천대",
         address: "경상북도 상주시 사벌면 삼덕리 산15-26",
+        latitude:"36.4582329", longitude:"128.2439989",
         img1: "./img/img16-1.jpg", img2: "./img/img16-2.jpg",
         province: "경상북도", 
         city: "상주시"
@@ -184,6 +200,7 @@ const dataSet = [
     {
         title: "상주박물관",
         address: "경상북도 상주시 사벌면 경천로 684",
+        latitude:"36.4606438", longitude:"128.2402266",
         img1: "./img/img17-1.jpg", img2: "./img/img17-2.jpg",
         province: "경상북도", 
         city: "상주시"
@@ -192,6 +209,7 @@ const dataSet = [
     {
         title: "선비촌",
         address: "경상북도 영주시 순흥면 청구리 357",
+        latitude:"36.9275034", longitude:"128.5825959",
         img1: "./img/img18-1.jpg", img2: "./img/img18-2.jpg",
         province: "경상북도", 
         city: "영주시"
@@ -199,6 +217,7 @@ const dataSet = [
     {
         title: "콩세계과학관",
         address: "경상북도 영주시 부석면 영부로 23",
+        latitude:"36.9949087", longitude:"128.664065",
         img1: "./img/img19-1.jpg", img2: "./img/img19-2.jpg",
         province: "경상북도", 
         city: "영주시"
@@ -207,6 +226,7 @@ const dataSet = [
     {
         title: "공산폭포",
         address: "경상북도 영천시 신녕면 치산리",
+        latitude:"36.0382044", longitude:"128.7177759",
         img1: "./img/img20-1.jpg", img2: "./img/img20-2.jpg",
         province: "경상북도", 
         city: "영천시"
@@ -214,6 +234,7 @@ const dataSet = [
     {
         title: "시안미술관",
         address: "경상북도 영천시 화산면 가래실로 364",
+        latitude:"36.0323156", longitude:"128.8893173",
         img1: "./img/img21-1.jpg", img2: "./img/img21-2.jpg",
         province: "경상북도", 
         city: "영천시"
@@ -221,14 +242,16 @@ const dataSet = [
     // 포항시
     {
         title: "영일대해수욕장",
-        address: "경북 포항시 북구 두호동 685-1",
+        address: "경상북도 포항시 북구 두호동 685-1",
+        latitude:"36.057289", longitude:"129.378069",
         img1: "./img/img22-1.jpg", img2: "./img/img22-2.jpg",
         province: "경상북도", 
         city: "포항시"
     },
     {
         title: "호미곶해맞이광장",
-        address: "경북 포항시 남구 호미곶면 해맞이로 136",
+        address: "경상북도 포항시 남구 호미곶면 해맞이로 136",
+        latitude:"36.0769937", longitude:"129.5655923",
         img1: "./img/img23-1.jpg", img2: "./img/img23-2.jpg",
         province: "경상북도", 
         city: "포항시"
@@ -291,22 +314,24 @@ function getTourList(data, i){
 }
 
 function tourListMap(str){
-    const address = document.querySelector(`.${str} .list-address`);
-
     var regex = /[^0-9]/g;				 // 숫자가 아닌 문자열을 선택하는 정규식
     var result = str.replace(regex, ""); // 원래 문자열에서 숫자가 아닌 모든 문자열을 빈 문자로 변경
     var i = parseInt(result);
-    var coords = getCoordsByAddress(address.innerHTML);
 
     closeInfowindow();
     infowindowArray[i].open(map, markerArray[i]);
-    map.setCenter(address.innerHTML);
+    map.panTo(coordsArray[i]);
 }
 
 async function setMap(dataSet) {
+    markerArray = [];
+    infowindowArray = [];
+    coordsArray = [];
     for (var i = 0; i < dataSet.length; i++) {
         // 마커 생성
-        let coords = await getCoordsByAddress(dataSet[i].address);
+        var coords = new kakao.maps.LatLng(dataSet[i].latitude, dataSet[i].longitude); //let coords = await getCoordsByAddress(dataSet[i].address);
+        coordsArray.push(coords);
+
         var marker = new kakao.maps.Marker({
             map: map,          // 마커를 표시할 지도
             position: coords,  // 마커를 표시할 위치
@@ -337,7 +362,6 @@ async function setMap(dataSet) {
             "click",
             makeOutListener(infowindow)
         );
-
     }
 }
 
@@ -352,7 +376,15 @@ function makeOverListener(map, marker, infowindow, coords){
     };
 }
 
-let infowindowArray = [] // 인포윈도우 관리를 위한 배열
+let markerArray = [];     // 마커 관리를 위한 배열
+let infowindowArray = []; // 인포윈도우 관리를 위한 배열
+let coordsArray = [];
+
+function closeMarker() {
+    for (marker of markerArray) {
+        marker.setMap(null);
+    }
+}
 
 function closeInfowindow(){
     for(let infowindow of infowindowArray){
@@ -380,21 +412,11 @@ function categoryHandler(){
     const city = document.querySelector(".city_dropdown .dropbtn_content");
 
     // 지도 이동
-    /*
     for(let data of cityDataSet){
         if(data.province === province.innerHTML && data.city === city.innerHTML){
             var moveLatLon = new kakao.maps.LatLng(data.latitude, data.longitude);
             map.setCenter(moveLatLon);
             map.setLevel(8);
-        }
-    }
-     */
-
-    for(var i=0; i<dataSet.length; i++){
-        if(i==0){
-            var moveLatLon = getCoordsByAddress(dataSet[i].address);
-            map.setLevel(8);
-            map.setCenter(moveLatLon);
         }
     }
 
@@ -411,11 +433,4 @@ function categoryHandler(){
     closeList();   // 기본 리스트 삭제
 
     setMap(categorizedDataSet); // 실행 - 마커, 인포윈도우, 관광 리스트
-}
-
-let markerArray = [];
-function closeMarker() {
-  for (marker of markerArray) {
-    marker.setMap(null)
-  }
 }
